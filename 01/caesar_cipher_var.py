@@ -1,6 +1,38 @@
 import string
 
 
+# def encrypting_message(message, key):
+#     encrypted_message = ''
+#     message = message.upper()
+#     for i in range(len(message)):
+#         if message[i].isalpha():
+#             char_index = ord(message[i])
+#             encrypted_index = char_index + key
+#             if char_index + key > 90:
+#                 rest_index = (char_index + key) - 90
+#                 encrypted_index = 64 + rest_index
+#             encrypted_message += chr(encrypted_index)
+#         if not message[i].isalpha():
+#             encrypted_message += message[i]
+#     return encrypted_message
+#
+#
+# def decrypting_message(message, key):
+#     encrypted_message = ''
+#     message = message.upper()
+#     for i in range(len(message)):
+#         if message[i].isalpha():
+#             char_index = ord(message[i])
+#             encrypted_index = char_index - key
+#             if char_index - key < 65:
+#                 rest_index = 90 - (64 - encrypted_index)
+#                 encrypted_index = rest_index
+#             encrypted_message += chr(encrypted_index)
+#         if not message[i].isalpha():
+#             encrypted_message += message[i]
+#     return encrypted_message
+
+
 def shift_letter(char, key):
     if char.isalpha():
         alphabet = string.ascii_uppercase if char.isupper() else string.ascii_lowercase
@@ -31,12 +63,10 @@ while True:
         if not 0 <= key <= 25:
             print('Please enter a valid key in the range 0 to 25.')
             continue
-        result = ''
+        message = input('Enter the message to encrypt.\n')
         if choice == "e":
-            message = input('Enter the message to encrypt.\n')
             result = encrypt_message(message, key)
         elif choice == "d":
-            message = input('Enter the message to decrypt.\n')
             result = decrypt_message(message, key)
         print(result)
 
