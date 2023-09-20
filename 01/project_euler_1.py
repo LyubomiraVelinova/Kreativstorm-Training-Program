@@ -61,10 +61,44 @@
 #
 # print(find_num(biggest_number))
 
-from functools import reduce
+# 04
+# largest_palindrome = 0
+# for first_num in range(999, 101, -1):
+#     for second_num in range(999, 101, -1):
+#         product = first_num * second_num
+#         if product == int(str(product)[::-1]) and product > largest_palindrome:
+#             largest_palindrome = product
+#             break
+#
+# print(largest_palindrome)
 
-numbers = [1, 5, 7, 9]
-total = reduce(lambda x, y: x + y, numbers)
-average = total / len(numbers)
+# 07
+def is_prime(number):
+    if number <= 1:
+        return False
+    elif number <= 3:
+        return True
+    elif number % 2 == 0 or number % 3 == 0:
+        return False
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
-print(averag)
+
+def find_nth_prime(nth):
+    prime_count = 0
+    candidate = 2
+    while True:
+        if is_prime(candidate):
+            prime_count += 1
+            if prime_count == nth:
+                return candidate
+        candidate += 1
+
+
+n = 10001
+result = find_nth_prime(n)
+print(f"The {n}th prime number is: {result}")
