@@ -73,32 +73,106 @@
 # print(largest_palindrome)
 
 # 07
-def is_prime(number):
-    if number <= 1:
-        return False
-    elif number <= 3:
-        return True
-    elif number % 2 == 0 or number % 3 == 0:
-        return False
-    i = 5
-    while i * i <= number:
-        if number % i == 0 or number % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+# def is_prime(number):
+#     if number <= 1:
+#         return False
+#     elif number <= 3:
+#         return True
+#     elif number % 2 == 0 or number % 3 == 0:
+#         return False
+#     i = 5
+#     while i * i <= number:
+#         if number % i == 0 or number % (i + 2) == 0:
+#             return False
+#         i += 6
+#     return True
+#
+#
+# def find_nth_prime(nth):
+#     prime_count = 0
+#     candidate = 2
+#     while True:
+#         if is_prime(candidate):
+#             prime_count += 1
+#             if prime_count == nth:
+#                 return candidate
+#         candidate += 1
+#
+#
+# n = 10001
+# result = find_nth_prime(n)
+# print(f"The {n}th prime number is: {result}")
 
 
-def find_nth_prime(nth):
-    prime_count = 0
-    candidate = 2
-    while True:
-        if is_prime(candidate):
-            prime_count += 1
-            if prime_count == nth:
-                return candidate
-        candidate += 1
+# 06
+# def sum_of_squares(n):
+#     squares = [num ** 2 for num in range(n + 1)]
+#     sum_squares = sum(squares)
+#     return sum_squares
+#
+#
+# def square_of_sum(n):
+#     numbers = [num for num in range(n + 1)]
+#     square_sum = (sum(numbers)) ** 2
+#     return square_sum
+#
+#
+# def find_difference(a, b):
+#     return a - b
+#
+#
+# n = 1000
+# print(find_difference(square_of_sum(n), sum_of_squares(n)))
 
 
-n = 10001
-result = find_nth_prime(n)
-print(f"The {n}th prime number is: {result}")
+# 08
+# def find_triplet(target):
+#     for a in range(1, target):
+#         for b in range(a + 1, target - a):
+#             c = target - a - b
+#             if a ** 2 + b ** 2 == c ** 2:
+#                 return a, b, c
+#
+#
+# def find_triplet_product(target):
+#     triplet = find_triplet(target)
+#     a, b, c = triplet
+#     product = a * b * c
+#     return product
+#
+#
+# target = 1000
+# print(find_triplet_product(1000))
+
+
+# 09
+# def is_prime(number):
+#     if number <= 1:
+#         return False
+#     elif number <= 3:
+#         return True
+#     elif number % 2 == 0 or number % 3 == 0:
+#         return False
+#     i = 5
+#     while i * i <= number:
+#         if number % i == 0 or number % (i + 2) == 0:
+#             return False
+#         i += 6
+#     return True
+#
+#
+# def find_nth_prime(n):
+#     prime_sum = 0
+#     for i in range(2, n+1):
+#         if is_prime(i):
+#             prime_sum += i
+#     return prime_sum
+#
+#
+# n = 2000000
+# print(find_nth_prime(n))
+
+
+# 05
+for i in range(1, 21):
+    
