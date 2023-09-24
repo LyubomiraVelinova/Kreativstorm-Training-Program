@@ -1,2 +1,2 @@
 # Kreativstorm-Training-Program
-Python Decelopment Training Program
+Python Development Training Program
