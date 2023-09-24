@@ -61,18 +61,41 @@
 # print(get_anagrams(words))
 
 # 04
-from itertools import product
+# from itertools import product
+#
+#
+# def cartesian_product(sets):
+#     if not sets:
+#         return []
+#     result = list(product(*sets))
+#     return result
+#
+#
+# first_set = {1, 2}
+# second_set = {'A', 'B'}
+# third_set = {True, False}
+# list_of_sets = [first_set, second_set, third_set]
+# print(cartesian_product(list_of_sets))
 
 
-def cartesian_product(sets):
-    if not sets:
-        return []
-    result = list(product(*sets))
-    return result
+CHALLENGE_TOKEN = "w4zf51yeqa20"
 
 
-first_set = {1, 2}
-second_set = {'A', 'B'}
-third_set = {True, False}
-list_of_sets = [first_set, second_set, third_set]
-print(cartesian_product(list_of_sets))
+def MathChallenge(num):
+    if not (1 <= int(num) <= 1000):
+        return "Invalid input, please enter a number between 1 and 1000."
+
+    integer_num = int(num)
+    for every_num in range(1, integer_num):
+        integer_num += every_num
+    num = str(integer_num)
+    num += CHALLENGE_TOKEN
+    for i in range(1, len(num) + 1):
+        if i % 3 == 0:
+            old_char = num[i - 1]
+            num = num.replace(old_char, "X")
+    return num
+
+
+# keep this function call here
+print(MathChallenge(input()))
